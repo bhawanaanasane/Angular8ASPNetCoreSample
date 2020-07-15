@@ -1,0 +1,149 @@
+<div class="main-content-wrap sidenav-open d-flex flex-column">
+  <div class="separator-breadcrumb border-top mt-4"></div>
+  <form #locationcreateForm="ngForm" (ngSubmit)="onSubmit(locationCreateForm)" class="needs-validation was-validated" novalidate>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card mb-4">
+          <div class="card-body">
+           
+              <div class="row">
+                <div class="col-md-6 form-group mb-3 small">
+                  <div class="row">
+                    <div class="col-md-4">
+                      
+                      <label >Company Name</label>
+                    </div>
+                    <div class="col-md-8">
+                      <!--<input type="text" class="form-control form-control-sm" id="firstName1" placeholder="Enter your company name" ngModel>-->
+                      <input type="text" class="form-control form-control-sm" name="CompanyName" placeholder="Enter Company Name" ngModel required>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 form-group mb-3 small">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label>Phone</label>
+                    </div>
+                    <div class="col-md-8 text-left">
+                      <input type="text" class="form-control form-control-sm" name="Phone"  placeholder="Enter your phone no" ngModel>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 form-group mb-3 small">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label>Address</label>
+                    </div>
+                    <div class="col-md-8 text-left">
+                      <input type="text" class="form-control form-control-sm" name="Address" placeholder="Enter your address" ngModel>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 form-group mb-3 small">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label >City</label>
+                    </div>
+                    <div class="col-md-8 text-left">
+                      <input type="text" class="form-control form-control-sm" name="City"  placeholder="Enter your City" ngModel>
+                    </div>
+                  </div>
+
+                </div>
+
+
+                <div class="col-md-6 form-group mb-3 small">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label >Address1</label>
+                    </div>
+                    <div class="col-md-8 text-left">
+                      <input type="text" class="form-control form-control-sm" name="Address1" placeholder="Enter your Address1" ngModel>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 form-group mb-3 small">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label >Zip Code</label>
+                    </div>
+                    <div class="col-md-8 text-left">
+                      <input type="text" class="form-control form-control-sm" name="zipcode" placeholder="Enter your zip code" ngModel>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col-md-6 form-group mb-3 small">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label for="Address1">State</label>
+                    </div>
+                    <div class="col-md-8 text-left">
+                      <select class="form-control form-control-sm" name="stateProvinceId" ngModel required>
+
+                        <option *ngFor="let state of states" value={{state.id}}>
+                          {{state.name}}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 form-group mb-3 small">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label for="Address1">Fax No</label>
+                    </div>
+                    <div class="col-md-8 text-left">
+                      <input type="text" class="form-control form-control-sm"  placeholder="Enter your fax no" ngModel>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 form-group mb-3 small">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label for="Address1">Port</label>
+                    </div>
+                    <div class="col-md-8 text-left">
+                      <select class="form-control form-control-sm" name="PortId"  ngModel >
+
+                        <option *ngFor="let state of states" value={{port.id}}>
+                          {{port.name}}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 form-group mb-3">
+                  <div class="row">
+                    <div class="col-md-4">
+
+                    </div>
+                    <div class="col-md-2">
+                     
+                      <label class="checkbox checkbox-outline-primary mt-2"><input type="checkbox" name="active" ngModel><span class="checkmark "></span>Port</label>
+                    </div>
+                    <div class="col-md-2">
+                     
+                      <label class="checkbox checkbox-outline-primary mt-2"><input type="checkbox" name="active" ngModel><span class="checkmark "></span>Active</label>
+                    </div>
+
+                  </div>
+                </div>
+
+
+
+                <div class="col-md-12">
+                  <button  type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+

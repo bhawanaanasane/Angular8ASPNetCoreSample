@@ -1,0 +1,155 @@
+<div class="main-content-wrap sidenav-open d-flex flex-column">
+
+  <div class="separator-breadcrumb border-top mt-4"> Edit BillTo</div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card mb-4">
+        <div class="card-body">
+          <form #billtoEditForm="ngForm" (ngSubmit)="onSubmit(billtoEditForm)" class="needs-validation was-validated" novalidate>
+            <div class="row">
+              <div class="col-md-6 form-group mb-3 small">
+                <div class="row">
+                  <div class="col-md-4">
+                    <input type="text"  class="form-control form-control-sm" name="Id" [(ngModel)] = "Billto.id" hidden="hidden" />
+                    <label for="City">Company Name</label>
+                  </div>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control form-control-sm" name="CompanyName"  [(ngModel)] = "Billto.companyName" placeholder="Enter your company name" ngModel required>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 form-group mb-3 small">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="City">Phone</label>
+                  </div>
+                  <div class="col-md-8 text-left">
+                    <input type="text" class="form-control form-control-sm" name="PhoneNumber" [(ngModel)] = "Billto.phoneNumber" ngModel placeholder="Enter your phone no" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 form-group mb-3 small">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="City">Address</label>
+                  </div>
+                  <div class="col-md-8 text-left">
+                    <input type="text" class="form-control form-control-sm" name="Address1" [(ngModel)] = "Billto.address1" ngModel placeholder="Enter your address" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 form-group mb-3 small">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="SSN">Invoice Email</label>
+                  </div>
+                  <div class="col-md-8 text-left">
+                    <input type="text" class="form-control form-control-sm" name="InvoiceEmailAddress" [(ngModel)] = "Billto.invoiceEmailAddress" ngModel placeholder="Enter your Email">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 form-group mb-3 small">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="Address">Address1</label>
+                  </div>
+                  <div class="col-md-8 text-left">
+                    <input type="text" class="form-control form-control-sm" name="Address2" [(ngModel)] = "Billto.address2" ngModel placeholder="Enter your Address">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 form-group mb-3 small">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="Address1">Fax No</label>
+                  </div>
+                  <div class="col-md-8 text-left">
+                    <input type="text" class="form-control form-control-sm" name="FaxNumber" [(ngModel)] = "Billto.faxNumber" ngModel placeholder="Enter your fax no">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 form-group mb-3 small">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="State">City</label>
+                  </div>
+                  <div class="col-md-8 text-left">
+                    <input type="text" class="form-control form-control-sm" name="City" [(ngModel)] = "Billto.city" ngModel placeholder="Enter your City" required>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-md-6 form-group mb-3 small">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label>Invoice Preference</label>
+                  </div>
+                  <div class="col-md-8 text-left">
+                    <select class="form-control form-control-sm" name="InvoicePreferenceId" [(ngModel)] = "Billto.invoicePreferenceId" ngModel>
+                      <option *ngFor="let key of keys" value={{key.key}}>
+                        {{key.value}}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 form-group mb-3 small">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="Address1">State</label>
+                  </div>
+                  <div class="col-md-8 text-left">
+                    <select class="form-control form-control-sm" name="StateProvienceId" [(ngModel)] = "Billto.stateProvince.id" ngModel required>
+                      <option *ngFor="let states of State" value={{states.id}}>
+                        {{states.name}}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 form-group mb-3">
+                <div class="row">
+                  <div class="col-md-4">
+
+                  </div>
+                  <div class="col-md-2">
+                    <label class="checkbox checkbox-outline-primary mt-2"><input type="checkbox" name="Factor" [(ngModel)] = "Billto.factor" ngModel><span class="checkmark "></span>Factor</label>
+
+                  </div>
+                  <div class="col-md-2">
+                    <label class="checkbox checkbox-outline-primary mt-2"><input type="checkbox" name="EDI" [(ngModel)] = "Billto.edi" ngModel><span class="checkmark "></span>EDI</label>
+
+                  </div>
+                  <div class="col-md-4">
+                    <label class="checkbox checkbox-outline-primary mt-2"><input type="checkbox" name="Active" [(ngModel)] = "Billto.active" ngModel><span class="checkmark "></span>Acive</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 form-group mb-3 small">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="Address1">Zip Code</label>
+                  </div>
+                  <div class="col-md-8 text-left">
+                    <input type="text" class="form-control form-control-sm" name="ZipCode" [(ngModel)] = "Billto.zipCode" ngModel placeholder="Enter your zip code">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="main-content-wrap sidenav-open d-flex flex-column mt-24">
+  <div class="separator-breadcrumb  mt-2">Create Role</div>
+  
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card mb-4">
+          <div class="card-body">
+            <form #userCreateRole="ngForm" (ngSubmit)="onSubmit(userCreateRole)">
+              <div class="row">
+                <div class="col-md-6 form-group mb-3 small">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label for="City">Role Name</label>
+                    </div>
+                    <div class="col-md-8">
+                      <input type="text" class="form-control form-control-sm" name="RoleName" placeholder="Enter your role" ngModel>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 form-group mb-3 small">
+                  <div class="row">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-8">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+
+                  </div>
+                </div>
+
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,222 @@
+<div class="main-content-wrap sidenav-open d-flex flex-column mt-24">
+  <form #clientCreateForm="ngForm" (ngSubmit)="onSubmit(clientCreateForm)" class="needs-validation was-validated" novalidate>
+
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+
+          <div class="col-md-6">
+            <p>Client Login</p>
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex flex-column">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label>User Name</label>
+                    </div>
+                    <div class="form-group col-md-8 text-left">
+                      <input type="text" class="form-control form-control-sm" name="userName" placeholder="Enter User Name" ngModel required>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label>Password</label>
+                    </div>
+                    <div class=" form-group col-md-8 text-left">
+                      <input type="password" class="form-control form-control-sm" name="password" placeholder="Enter Password" ngModel required>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label>Role</label>
+                    </div>
+                    <div class=" form-group col-md-8 text-left">
+                      <select class="form-control form-control-sm" name="roleId" required>
+                        <option *ngFor="let role of roles" value={{role.id}}>
+                          {{role.roleName}}
+                        </option>
+
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <p>Company Form</p>
+            <div class="card ">
+              <div class="card-body">
+                <div class="d-flex flex-column">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label>Starting Driver Code#</label>
+                    </div>
+                    <div class=" form-group col-md-8 text-left">
+                      <input type="text" class="form-control form-control-sm" name="startingDriverCodeNumber" placeholder="Enter Driver Code" ngModel>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label>Starting Order No#</label>
+                    </div>
+                    <div class=" form-group col-md-8 text-left">
+                      <input type="text" class="form-control form-control-sm" name="startingOrderNumber" placeholder="Enter Order No" ngModel>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label>Company Icon</label>
+                    </div>
+                    <div class=" form-group col-md-8 text-left">
+
+                      <input type="file" class="form-control" />
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <p>Client Form</p>
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex flex-column">
+                  <div class="row">
+                    <div class="col-md-6 form-group mb-3 small">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <label for="City">Client Name</label>
+                        </div>
+                        <div class="col-md-8">
+                          <input type="text" class="form-control form-control-sm" name="name" placeholder="Enter Client Name" ngModel required>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 form-group mb-3 small">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <label for="City">Zip Code</label>
+                        </div>
+                        <div class="col-md-8 text-left">
+                          <input type="text" class="form-control form-control-sm" name="zipCode" placeholder="Enter Zip Code" ngModel required>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 form-group mb-3 small">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <label for="City">Address</label>
+                        </div>
+                        <div class="col-md-8 text-left">
+                          <input type="text" class="form-control form-control-sm" name="address1" placeholder="Enter Address" ngModel required>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 form-group mb-3 small">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <label for="SSN">Phone#</label>
+                        </div>
+                        <div class="col-md-8 text-left">
+                          <input type="text" class="form-control form-control-sm" name="phoneNumber" placeholder="Enter Phone No" ngModel required>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 form-group mb-3 small">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <label for="City">Address 1</label>
+                        </div>
+                        <div class="col-md-8 text-left">
+                          <input type="text" class="form-control form-control-sm" name="address2" placeholder="Enter Address" ngModel>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 form-group mb-3 small">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <label for="SSN">Fax#</label>
+                        </div>
+                        <div class="col-md-8 text-left">
+                          <input type="text" class="form-control form-control-sm" name="faxNumber" placeholder="Enter Fax No" ngModel>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 form-group mb-3 small">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <label for="City">City</label>
+                        </div>
+                        <div class="col-md-8 text-left">
+                          <input type="text" class="form-control form-control-sm" name="city" placeholder="Enter City" ngModel required>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 form-group mb-3 small">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <label for="SSN">Client Code#</label>
+                        </div>
+                        <div class="col-md-8 text-left">
+                          <input type="text" class="form-control form-control-sm" [(ngModel)]="clientCodeValue" name="clientCode" placeholder="Enter Client Code" ngModel readonly>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 form-group mb-3 small">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <label for="City">State</label>
+                        </div>
+                        <div class="col-md-8 text-left">
+                          <select class="form-control form-control-sm" name="stateProvinceId" ngModel required>
+
+                            <option *ngFor="let state of states" value={{state.id}}>
+                              {{state.name}}
+                            </option>
+                          </select>
+
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 form-group mb-3 small">
+                      <div class="row">
+                        <div class="col-md-4">
+
+                        </div>
+                        <div class="col-md-8 text-left">
+                          <label class="checkbox checkbox-outline-primary mt-2"><input type="checkbox" name="active" ngModel><span class="checkmark "></span>Acive</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 mt-2">
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

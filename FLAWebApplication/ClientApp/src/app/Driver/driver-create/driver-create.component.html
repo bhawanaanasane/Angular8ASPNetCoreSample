@@ -1,0 +1,723 @@
+<div class="main-content-wrap sidenav-open d-flex flex-column mt-24">
+  <form #driverCreateForm="ngForm" (ngSubmit)="onSubmit(driverCreateForm)" class="needs-validation was-validated" novalidate>
+    <div class="card">
+      <div class="card-body">
+        <div class="ul-widget__head small">
+          <div class="ul-widget__head-label small">
+            <h3 class="ul-widget__head-title small">
+              Driver
+            </h3>
+          </div>
+          <div class="ul-widget__head-toolbar ">
+            <ul class="nav nav-pills " role="tablist">
+              <li class="nav-item ">
+                <a class="nav-link active" data-toggle="tab" href="#ul-widget3-tab1-content" role="tab" aria-selected="true">
+                  Driver Info
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" data-toggle="tab" href="#ul-widget3-tab2-content" role="tab" aria-selected="false">
+                  License & Truck Info
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link " data-toggle="tab" href="#ul-widget3-tab3-content" role="tab" aria-selected="false">
+                  Medical Info
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" data-toggle="tab" href="#ul-widget3-tab4-content" role="tab" aria-selected="false">
+                 Driver Login Info
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="ul-widget__body">
+          <div class="tab-content ">
+            <div class="tab-pane active" id="ul-widget3-tab1-content">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class=" mb-4">
+                    <div class="card-body">
+
+                      <div class="row">
+
+                        <div class="col-md-6 form-group mb-3 small">
+                          <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-3">
+                              <label for="DriverCode">Driver Code</label>
+                            </div>
+                            <div class="col-md-7 text-left">
+                              <input type="text" class="form-control form-control-sm" *ngFor="let driversCode of driverCode" name="DriverCode" value="{{driversCode}}" placeholder="Enter driver code" ngModel>
+                            </div>
+                          </div>
+                          <div class="row mt-2">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-3">
+                              <label for="City">First Name</label>
+                            </div>
+                            <div class="col-md-7">
+                              <input type="text" class="form-control form-control-sm" name="firstname" placeholder="Enter your first name" ngModel required>
+                            </div>
+                          </div>
+                          <div class="row mt-2">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-3">
+                              <label for="City">Last Name</label>
+                            </div>
+                            <div class="col-md-7 text-left">
+                              <input type="text" class="form-control form-control-sm" name="lastname" placeholder="Enter your Last name" ngModel required>
+                            </div>
+                          </div>
+                          <!--<div class="row  mt-2">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-3">
+                    <label for="Address1">User Name</label>
+                  </div>
+                  <div class="col-md-7 text-left">
+                    <input type="text" class="form-control form-control-sm" id="UserName" placeholder="Enter your User Name" ngModel>
+                  </div>
+                </div>
+                <div class="row mt-2">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-3">
+                    <label for="Address1">Password</label>
+                  </div>
+                  <div class="col-md-7 text-left">
+                    <input type="password" class="form-control form-control-sm" id="UserName" placeholder="Enter your User Name" ngModel>
+                  </div>
+                </div>-->
+                          <div class="row mt-2">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-3">
+                              <label for="City">Date Of Birth</label>
+                            </div>
+                            <div class="col-md-7 text-left">
+                              <input id="picker2" class="form-control" name="birthdate" placeholder="yyyy-mm-dd" ngModel required>
+                            </div>
+                          </div>
+                          <div class="row mt-2">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-3">
+                              <label for="SSN">SSN#</label>
+                            </div>
+                            <div class="col-md-7 text-left">
+                              <input type="text" class="form-control form-control-sm" name="ssn" placeholder="Enter ssn" ngModel>
+                            </div>
+                          </div>
+                          <div class="row mt-2">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-3">
+                              <label for="City">Home#</label>
+                            </div>
+                            <div class="col-md-7">
+                              <input class="form-control form-control-sm" name="home" placeholder="Contact No" ngModel>
+                            </div>
+                          </div>
+                          <div class="row mt-2">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-3">
+                              <label for="City">Mobile No#</label>
+                            </div>
+                            <div class="col-md-7">
+                              <input class="form-control form-control-sm" name="mobile" placeholder="Contact No" ngModel>
+                            </div>
+                          </div>
+                          <div class="row mt-2">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-3">
+                              <label for="Address1">Date Hired</label>
+                            </div>
+                            <div class="col-md-7 text-left">
+                              <input class="form-control" placeholder="yyyy-mm-dd" name="hiredate" ngModel required>
+                            </div>
+                          </div>
+
+                          <div class="row mt-2">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-3">
+                              <label for="Address1">Date Left</label>
+                            </div>
+                            <div class="col-md-7 text-left">
+                              <input class="form-control" placeholder="yyyy-mm-dd" name="leftdate" ngModel>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 form-group mb-3 small">
+                          <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-3">
+                              <label for="Address">Address1</label>
+                            </div>
+                            <div class="col-md-7 text-left">
+                              <input type="text" class="form-control form-control-sm" name="address1" placeholder="Enter your Address1" ngModel>
+                            </div>
+                          </div>
+
+                          <div class="row mt-2">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-3">
+                              <label for="Address1">Address2</label>
+                            </div>
+                            <div class="col-md-7 text-left">
+                              <input type="text" class="form-control form-control-sm" name="address2" placeholder="Enter your Address2" ngModel>
+                            </div>
+                          </div>
+
+                          <div class="row mt-2">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-3">
+                              <label for="State">State</label>
+                            </div>
+                            <div class="col-md-7 text-left">
+                              <select class="form-control form-control-sm" name="stateProvinceId" ngModel required>
+
+                                <option *ngFor="let state of states" value={{state.id}}>
+                                  {{state.name}}
+                                </option>
+                              </select>
+
+                            </div>
+                          </div>
+
+                          <div class="row mt-2">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-3">
+                              <label for="Address1">City</label>
+                            </div>
+                            <div class="col-md-7 text-left">
+                              <input type="text" class="form-control form-control-sm" name="city" placeholder="Enter your City" ngModel>
+                            </div>
+                          </div>
+
+                          <div class="row mt-2">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-3">
+                              <label for="Address1">Zip Code</label>
+                            </div>
+                            <div class="col-md-7 text-left">
+                              <input type="text" class="form-control form-control-sm" name="zipcode" placeholder="Enter your Zip Code" ngModel>
+                            </div>
+                          </div>
+                          <div class="row mt-2">
+                            <div class="col-md-4">
+
+                            </div>
+                            <div class="col-md-7 text-left">
+                              <label class="checkbox checkbox-outline-primary mt-2"><input type="checkbox" name="active"><span class="checkmark" ngModel></span>Acive</label>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" id="ul-widget3-tab2-content">
+              <div class="row">
+
+                <div class="col-md-4">
+                  <p>Owner Info</p>
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex flex-column">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label>Owner/Driver</label>
+                          </div>
+                          <div class=" form-group col-md-8 text-left">
+                            <select class="form-control form-control-sm" name="operatortypeId" ngModel>
+                              <option *ngFor="let key of keys" value={{key.key}}>
+                                {{key.value}}
+                              </option>
+                            </select>
+                            <!--<select class="form-control form-control-sm">
+                    <option>Owner</option>
+                    <option>Driver</option>
+
+                  </select>-->
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label>First Name</label>
+                          </div>
+                          <div class=" form-group col-md-8 text-left">
+                            <input type="text" class="form-control form-control-sm" name="truckOwnerFirstName" placeholder="Enter Owner First Name" ngModel>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label>Last Name</label>
+                          </div>
+                          <div class=" form-group col-md-8 text-left">
+                            <input type="text" class="form-control form-control-sm" name="truckOwnerLastName" placeholder="Enter Owner Last Name" ngModel>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label>Phone#</label>
+                          </div>
+                          <div class=" form-group col-md-8 text-left">
+                            <input type="text" class="form-control form-control-sm" name="truckOwnerPhoneNumber" placeholder="Enter Owner Phone Number" ngModel>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <p>License Info</p>
+                  <div class="card ">
+                    <div class="card-body">
+                      <div class="d-flex flex-column">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label>Driver License</label>
+                          </div>
+                          <div class=" form-group col-md-8 text-left">
+                            <input type="text" class="form-control form-control-sm" name="driverLicenseNumber" placeholder="Enter Driver License No.." ngModel>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label>Driver License Exp</label>
+                          </div>
+                          <div class=" form-group col-md-8 text-left">
+                            <input class="form-control" placeholder="yyyy-mm-dd" name="driverLicenseExpiry" ngModel>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label>Tractor License</label>
+                          </div>
+                          <div class=" form-group col-md-8 text-left">
+                            <input type="text" class="form-control form-control-sm" name="tractorLicense" placeholder="Enter Tractor License No.." ngModel>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <p>Option</p>
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex flex-column">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label class="checkbox checkbox-outline-primary mt-2"><input type="checkbox" name="classALicenseFlag"><span class="checkmark" ngModel></span>Class A</label>
+
+                          </div>
+                          <div class=" form-group col-md-6 text-left">
+                            <label class="checkbox checkbox-outline-primary mt-2"><input type="checkbox" name="doublesLicenseFlag"><span class="checkmark" ngModel></span>Doubles License</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label class="checkbox checkbox-outline-primary mt-2"><input type="checkbox" name="uIIAFlag"><span class="checkmark" ngModel></span>UIIA</label>
+
+                          </div>
+                          <div class=" form-group col-md-6 text-left">
+                            <label class="checkbox checkbox-outline-primary mt-2"><input type="checkbox" name="hazardousLicenseFlag"><span class="checkmark" ngModel></span>Hazardous License</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label class="checkbox checkbox-outline-primary mt-2"><input type="checkbox" name="triplesLicenseFlag"><span class="checkmark" ngModel></span>Triples License</label>
+
+                          </div>
+                          <div class=" form-group col-md-6 text-left">
+                            <label class="checkbox checkbox-outline-primary mt-2"><input type="checkbox" name="aRBFlag"><span class="checkmark" ngModel></span>ARB</label>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-1 mt-3">
+                  Notes
+                </div>
+                <div class=" form-group col-md-11 text-left">
+                  <textarea class="form-control" placeholder="Enter notes here" name="notes"></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <p>Truck Info</p>
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex flex-column">
+                        <div class="row">
+                          <div class="col-md-6 form-group mb-3 small">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label for="City">Truck Mark</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input type="text" class="form-control form-control-sm" placeholder="Enter truck mark." name="truckMake">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6 form-group mb-3 small">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label>VIN#</label>
+                              </div>
+                              <div class="col-md-8 text-left">
+                                <input type="text" class="form-control form-control-sm" name="vINNumber" placeholder="Enter vin#">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6 form-group mb-3 small">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label>EIN #</label>
+                              </div>
+                              <div class="col-md-8 text-left">
+                                <input class="form-control" placeholder="Enter EIN number" name="eINNumber">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-6 form-group mb-3 small">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label>Lease Date Expiry</label>
+                              </div>
+                              <div class="col-md-8 text-left">
+                                <input class="form-control" placeholder="yyyy-mm-dd" name="leaseDateExpiry">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6 form-group mb-3 small">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label>Twic Expiry</label>
+                              </div>
+                              <div class="col-md-8 text-left">
+                                <input class="form-control" placeholder="yyyy-mm-dd" name="twicCardExpiry">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-6 form-group mb-3 small">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label>Truck Reg Expiry</label>
+                              </div>
+                              <div class="col-md-8 text-left">
+                                <input class="form-control" placeholder="yyyy-mm-dd" name="truckRegDate">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-6 form-group mb-3 small">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label>Apportioed Plates Expiry</label>
+                              </div>
+                              <div class="col-md-8 text-left">
+                                <input class="form-control" placeholder="yyyy-mm-dd" name="apportionedPlatesExpiry">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-6 form-group mb-3 small">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label>GPS Serial</label>
+                              </div>
+                              <div class="col-md-8 text-left">
+                                <input class="form-control" placeholder="yyyy-mm-dd" name="apportionedPlatesExpiry">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6 form-group mb-3 small">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label>RFID #</label>
+                              </div>
+                              <div class="col-md-8 text-left">
+                                <input class="form-control" name="rFIDNumber">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-6 form-group mb-3 small">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label>PDTR/LB</label>
+                              </div>
+                              <div class="col-md-8 text-left">
+                                <input type="text" class="form-control form-control-sm" placeholder="Enter PDTR/LB." name="pDTRLB">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6 form-group mb-3 small">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label>PDTR/LA</label>
+                              </div>
+                              <div class="col-md-8 text-left">
+                                <input type="text" class="form-control form-control-sm" placeholder="Enter PDTR/LB." name="pDTRLA">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-1">
+
+                <div class="col-md-6 ">
+                  <p>DMV P/N</p>
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex flex-column">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label>Date Added</label>
+                          </div>
+                          <div class=" form-group col-md-8 text-left">
+                            <input class="form-control" placeholder="yyyy-mm-dd" name="dMVDateAdd">
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label>Date Deleted</label>
+                          </div>
+                          <div class=" form-group col-md-8 text-left">
+                            <input class="form-control" placeholder="yyyy-mm-dd" name="dMVDateDelete">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label>Fuel Card </label>
+                          </div>
+                          <div class=" form-group col-md-8 text-left">
+                            <input type="text" class="form-control form-control-sm" name="fuelCardNumber" placeholder="Enter fuel card info">
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <p>Truck Inspection Info</p>
+                  <div class="card ">
+                    <div class="card-body">
+                      <div class="d-flex flex-column">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label>Truck Inspection</label>
+                          </div>
+                          <div class=" form-group col-md-8 text-left">
+                            <input class="form-control" placeholder="yyyy-mm-dd" name="truckInspectionDate">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label>CHP Inspection</label>
+                          </div>
+                          <div class=" form-group col-md-8 text-left">
+                            <input class="form-control" placeholder="yyyy-mm-dd" name="cHPInspectionDate">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label>Smoke Check</label>
+                          </div>
+                          <div class=" form-group col-md-8 text-left">
+                            <input class="form-control" placeholder="yyyy-mm-dd" name="smokeCheckDate">
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane " id="ul-widget3-tab3-content">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class=" mb-4">
+                    <div class="card-body">
+
+                      <div class="row">
+                        <div class="col-md-6 form-group mb-3">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <label for="Address1">Company Occupational Ins. Start Date</label>
+                            </div>
+                            <div class="col-md-8 text-left">
+                              <input class="form-control" placeholder="yyyy-mm-dd" name="occInsuranceStartDate">
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6 form-group mb-3">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <label for="Address1">Company Occupational Ins. End Date</label>
+                            </div>
+                            <div class="col-md-8 text-left">
+                              <input class="form-control" placeholder="yyyy-mm-dd" name="occInsuranceEndDate">
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6 form-group mb-3">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <label for="Address1">Company Liability Ins. Start Date</label>
+                            </div>
+                            <div class="col-md-8 text-left">
+                              <input class="form-control" placeholder="yyyy-mm-dd" name="liabilityInsuranceStartDate">
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6 form-group mb-3">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <label for="Address1">Company Liability Ins. End Date</label>
+                            </div>
+                            <div class="col-md-8 text-left">
+                              <input class="form-control" placeholder="yyyy-mm-dd" name="liabilityInsuranceEndDate">
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6 form-group mb-3">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <label for="Address1">Driver Liability Insurance#</label>
+                            </div>
+                            <div class="col-md-8 text-left">
+                              <input type="text" class="form-control form-control-sm" placeholder="Enter your Liability Insurance" name="DriverLiabilityInsuranceNumber">
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6 form-group mb-3">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <label for="Address1">Driver Liability Expiry Date</label>
+                            </div>
+                            <div class="col-md-8 text-left">
+                              <input class="form-control" placeholder="yyyy-mm-dd" name="driverLiabilityExpiry">
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6 form-group mb-3">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <label for="Address1">Medical Card</label>
+                            </div>
+                            <div class="col-md-8 text-left">
+                              <input class="form-control" placeholder="yyyy-mm-dd" name="medicalCard">
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6 form-group mb-3">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <label for="Address1">Expiration</label>
+                            </div>
+                            <div class="col-md-8 text-left">
+                              <input class="form-control" placeholder="yyyy-mm-dd" name="insurenceExpiry">
+                            </div>
+                          </div>
+                        </div>
+
+
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane " id="ul-widget3-tab4-content">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class=" mb-4">
+                    <div class="card-body">
+
+                      <div class="row">
+                        <div class="col-md-6 form-group mb-3">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <label>User Name</label>
+                            </div>
+                            <div class="col-md-8 text-left">
+                              <input class="form-control"  name="username" ng-model>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6 form-group mb-3">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <label>Password</label>
+                            </div>
+                            <div class="col-md-6 text-left">
+                              <input type="password" class="form-control" name="password">
+                            </div>
+                            <div class="col-md-1 mt-1  text-left pl-0">
+                              <a id="eyeClass" onclick="showPassword()"><i class="icon- text-blue handCursor"></i></a>
+
+                            </div>
+                          </div>
+                        </div>
+
+                       
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+

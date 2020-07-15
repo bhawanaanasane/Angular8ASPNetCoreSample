@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>FLA.Core</AssemblyName>
+    <RootNamespace>FLA.Core</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Domain\EnumStatus\" />
+    <Folder Include="Domain\Mobile\" />
+    <Folder Include="Domain\Drivers\" />
+    <Folder Include="Domain\Directory\" />
+    <Folder Include="Domain\Clients\" />
+    <Folder Include="Domain\ChatDetail\" />
+    <Folder Include="Domain\BaseTable\" />
+    <Folder Include="Domain\Orders\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+  </ItemGroup>
+
+</Project>
